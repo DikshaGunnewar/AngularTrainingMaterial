@@ -1,0 +1,628 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "step1-custom": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/step1-custom",
+      "sourceRoot": "projects/step1-custom/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/step1-custom",
+            "index": "projects/step1-custom/src/index.html",
+            "main": "projects/step1-custom/src/main.ts",
+            "polyfills": "projects/step1-custom/src/polyfills.ts",
+            "tsConfig": "projects/step1-custom/tsconfig.app.json",
+            "assets": [
+              "projects/step1-custom/src/favicon.ico",
+              "projects/step1-custom/src/assets"
+            ],
+            "styles": [
+              "projects/step1-custom/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/step1-custom/src/environments/environment.ts",
+                  "with": "projects/step1-custom/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "step1-custom:build:production"
+            },
+            "development": {
+              "browserTarget": "step1-custom:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "step1-custom:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/step1-custom/src/test.ts",
+            "polyfills": "projects/step1-custom/src/polyfills.ts",
+            "tsConfig": "projects/step1-custom/tsconfig.spec.json",
+            "karmaConfig": "projects/step1-custom/karma.conf.js",
+            "assets": [
+              "projects/step1-custom/src/favicon.ico",
+              "projects/step1-custom/src/assets"
+            ],
+            "styles": [
+              "projects/step1-custom/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "step2-feature-lazy": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/step2-feature-lazy",
+      "sourceRoot": "projects/step2-feature-lazy/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/step2-feature-lazy",
+            "index": "projects/step2-feature-lazy/src/index.html",
+            "main": "projects/step2-feature-lazy/src/main.ts",
+            "polyfills": "projects/step2-feature-lazy/src/polyfills.ts",
+            "tsConfig": "projects/step2-feature-lazy/tsconfig.app.json",
+            "assets": [
+              "projects/step2-feature-lazy/src/favicon.ico",
+              "projects/step2-feature-lazy/src/assets"
+            ],
+            "styles": [
+              "projects/step2-feature-lazy/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/step2-feature-lazy/src/environments/environment.ts",
+                  "with": "projects/step2-feature-lazy/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "step2-feature-lazy:build:production"
+            },
+            "development": {
+              "browserTarget": "step2-feature-lazy:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "step2-feature-lazy:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/step2-feature-lazy/src/test.ts",
+            "polyfills": "projects/step2-feature-lazy/src/polyfills.ts",
+            "tsConfig": "projects/step2-feature-lazy/tsconfig.spec.json",
+            "karmaConfig": "projects/step2-feature-lazy/karma.conf.js",
+            "assets": [
+              "projects/step2-feature-lazy/src/favicon.ico",
+              "projects/step2-feature-lazy/src/assets"
+            ],
+            "styles": [
+              "projects/step2-feature-lazy/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "step3-ajax": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/step3-ajax",
+      "sourceRoot": "projects/step3-ajax/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/step3-ajax",
+            "index": "projects/step3-ajax/src/index.html",
+            "main": "projects/step3-ajax/src/main.ts",
+            "polyfills": "projects/step3-ajax/src/polyfills.ts",
+            "tsConfig": "projects/step3-ajax/tsconfig.app.json",
+            "assets": [
+              "projects/step3-ajax/src/favicon.ico",
+              "projects/step3-ajax/src/assets"
+            ],
+            "styles": [
+              "projects/step3-ajax/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/step3-ajax/src/environments/environment.ts",
+                  "with": "projects/step3-ajax/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "step3-ajax:build:production"
+            },
+            "development": {
+              "browserTarget": "step3-ajax:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "step3-ajax:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/step3-ajax/src/test.ts",
+            "polyfills": "projects/step3-ajax/src/polyfills.ts",
+            "tsConfig": "projects/step3-ajax/tsconfig.spec.json",
+            "karmaConfig": "projects/step3-ajax/karma.conf.js",
+            "assets": [
+              "projects/step3-ajax/src/favicon.ico",
+              "projects/step3-ajax/src/assets"
+            ],
+            "styles": [
+              "projects/step3-ajax/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "step4-crud": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/step4-crud",
+      "sourceRoot": "projects/step4-crud/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/step4-crud",
+            "index": "projects/step4-crud/src/index.html",
+            "main": "projects/step4-crud/src/main.ts",
+            "polyfills": "projects/step4-crud/src/polyfills.ts",
+            "tsConfig": "projects/step4-crud/tsconfig.app.json",
+            "assets": [
+              "projects/step4-crud/src/favicon.ico",
+              "projects/step4-crud/src/assets"
+            ],
+            "styles": [
+              "projects/step4-crud/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/step4-crud/src/environments/environment.ts",
+                  "with": "projects/step4-crud/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "step4-crud:build:production"
+            },
+            "development": {
+              "browserTarget": "step4-crud:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "step4-crud:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/step4-crud/src/test.ts",
+            "polyfills": "projects/step4-crud/src/polyfills.ts",
+            "tsConfig": "projects/step4-crud/tsconfig.spec.json",
+            "karmaConfig": "projects/step4-crud/karma.conf.js",
+            "assets": [
+              "projects/step4-crud/src/favicon.ico",
+              "projects/step4-crud/src/assets"
+            ],
+            "styles": [
+              "projects/step4-crud/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "step5-resolver": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/step5-resolver",
+      "sourceRoot": "projects/step5-resolver/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/step5-resolver",
+            "index": "projects/step5-resolver/src/index.html",
+            "main": "projects/step5-resolver/src/main.ts",
+            "polyfills": "projects/step5-resolver/src/polyfills.ts",
+            "tsConfig": "projects/step5-resolver/tsconfig.app.json",
+            "assets": [
+              "projects/step5-resolver/src/favicon.ico",
+              "projects/step5-resolver/src/assets"
+            ],
+            "styles": [
+              "projects/step5-resolver/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/step5-resolver/src/environments/environment.ts",
+                  "with": "projects/step5-resolver/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "step5-resolver:build:production"
+            },
+            "development": {
+              "browserTarget": "step5-resolver:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "step5-resolver:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/step5-resolver/src/test.ts",
+            "polyfills": "projects/step5-resolver/src/polyfills.ts",
+            "tsConfig": "projects/step5-resolver/tsconfig.spec.json",
+            "karmaConfig": "projects/step5-resolver/karma.conf.js",
+            "assets": [
+              "projects/step5-resolver/src/favicon.ico",
+              "projects/step5-resolver/src/assets"
+            ],
+            "styles": [
+              "projects/step5-resolver/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "step4-crud"
+}

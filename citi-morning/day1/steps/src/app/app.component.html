@@ -1,0 +1,51 @@
+<h1>Hello {{companyName}} from External Site </h1>
+
+<h2>Attribute Binding Examples</h2>
+<h4 innerText="{{companyName}}"></h4>
+<h4 innerHTML="{{companyName}}"></h4>
+<h4 textContent="{{companyName}}"></h4>
+<h4 [textContent]="companyName"></h4>
+<h4 [textContent]="companyName"></h4>
+<h4 bind-textContent="companyName"></h4>
+
+<h2>Value Binding and Event Binding </h2>
+<input type="text" [value]= "companyName" (change)="changeHandler()"/>
+
+<h2>Template reference variable data binding</h2>
+<input #test1 type="text" [value]= "companyName" (input)=test1.value/>
+
+<h2>two way databinding using formsmodule</h2>
+<input [(ngModel)]="companyName">
+
+<h2>Class Binding </h2>
+
+<div class="{{classname}}">
+    Citigroup Inc. or Citi is a US-American multinational investment bank and financial services corporation headquartered in New York City.
+    The company was formed by the merger of banking giant Citicorp and financial conglomerate Travelers Group in 1998; 
+    Travelers was subsequently spun off from the company in 2002. 
+</div>
+
+<hr>
+<app-second [power]="appPower">
+    <p>  This is a message from app component </p>
+    <button>Click Me</button>
+    <p class="player">This is a message from app component class player. </p>
+    <ul>
+      <li>Coco-cola</li>
+      <li>Thumbsup</li>
+      <li>Fanta</li>
+    </ul>
+    <p> This is a message from app component </p>
+  </app-second>
+  <hr>
+  <app-second (messageEvent)="messageEventHandler($event)" [power]="appPower" [secret]="'Hello Diksha'">
+      
+  <button (click)="clickButton($event)">Click Me 1</button>
+  <button (click)="clickButton($event)">Click Me 2</button>
+  <button (click)="clickButton($event)">Click Me 3</button>
+
+  <hr>
+  <button (click)="increasePower()">Increase Power</button>
+
+  </app-second>
+
